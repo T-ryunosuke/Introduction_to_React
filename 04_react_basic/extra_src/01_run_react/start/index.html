@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/libs/react.development.js"></script>
+    <script src="/libs/react-dom.development.js"></script>
+    <!-- ReactではJSX構文を用いるためJSのオブジェクトに変換するためにbabelというソフトウェアを使う -->
+    <script src="/libs/babel-standalone.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 通常のJS（<script>内）ではhtmlタグを使わないため、type="text/babel"を記述してbabelでJSコードに変換しないとエラーが出てしまう -->
+    <script type="text/babel">
+      // idがappのDOMを取得
+      const appEl = document.querySelector("#app");
+      // reactのrootを作成して、そのrenderメソッドを呼ぶと画面に表示できる
+      const root = ReactDOM.createRoot(appEl);
+      // 見かけ上htmlにしか見えないrender内の記述はJSXというReact独自の構文
+      root.render(<h1>こんにちは</h1>);
+    </script>
+  </body>
+</html>
